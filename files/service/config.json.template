@@ -1,10 +1,10 @@
 {
   "default": {
     "database": {
-      "host": "postgres",
-      "user": "odk",
-      "password": "odk",
-      "database": "odk"
+      "host": "db-postgresql-upneat-do-user-2305100-0.b.db.ondigitalocean.com",
+      "user": "doadmin",
+      "password": "kqipeuqjj1bxjt18",
+      "database": "defaultdb"
     },
     "email": {
       "serviceAccount": "no-reply@${DOMAIN}",
