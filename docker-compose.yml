@@ -5,9 +5,9 @@ services:
     volumes:
       - /var/lib/postgresql/data
     environment:
-      POSTGRES_USER: doadmin
-      POSTGRES_PASSWORD: kqipeuqjj1bxjt18
-      POSTGRES_DATABASE: defaultdb
+      POSTGRES_USER: odk
+      POSTGRES_PASSWORD: odk
+      POSTGRES_DATABASE: odk
     restart: always
   mail:
     container_name: mail
@@ -36,7 +36,7 @@ services:
     environment:
       - DOMAIN=${DOMAIN}
       - SYSADMIN_EMAIL=${SYSADMIN_EMAIL}
-    command: [ "./wait-for-it.sh", "db-postgresql-upneat-do-user-2305100-0.b.db.ondigitalocean.com:25060", "--", "./start-odk.sh" ]
+    command: [ "./wait-for-it.sh", "localhost:5432", "--", "./start-odk.sh" ]
     restart: always
   nginx:
     container_name: nginx
