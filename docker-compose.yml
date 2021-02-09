@@ -5,9 +5,9 @@ services:
     volumes:
       - /var/lib/postgresql/data
     environment:
-      POSTGRES_USER: odk
-      POSTGRES_PASSWORD: odk
-      POSTGRES_DATABASE: odk
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Millet2021Odk
+      POSTGRES_DATABASE: postgres
     restart: always
   mail:
     container_name: mail
@@ -36,7 +36,7 @@ services:
     environment:
       - DOMAIN=${DOMAIN}
       - SYSADMIN_EMAIL=${SYSADMIN_EMAIL}
-    command: [ "./wait-for-it.sh", "localhost:5432", "--", "./start-odk.sh" ]
+    command: [ "./wait-for-it.sh", "milletodk.cvzccxf4afct.eu-west-1.rds.amazonaws.com:5432", "--", "./start-odk.sh" ]
     restart: always
   nginx:
     container_name: nginx
